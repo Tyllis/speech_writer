@@ -6,7 +6,7 @@ from openai import OpenAI
 st.set_page_config(
     page_title="SpeechWriter",
     page_icon="./logo.ico",
-    layout="wide"
+    layout="centered"
 )
 tooltip_style = """
 <style>
@@ -15,7 +15,11 @@ div[data-baseweb="tooltip"] {
 }
 </style>
 """
-
+st.markdown(
+    tooltip_style,
+    unsafe_allow_html=True
+)
+st.markdown("")
 
 def main():
     if check_password(st.session_state, st.secrets):
