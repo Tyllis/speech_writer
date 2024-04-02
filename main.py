@@ -174,7 +174,7 @@ def gather_info():
             thread = st.session_state['client'].beta.threads.create()
             st.session_state['thread_id'] = thread.id
             # create the first message
-            message = "Help me write a speech based on the following parameters:  \n"
+            message = "Help me write a speech based on the following parameters (ignore empty parameters):  \n"
             for key, val in st.session_state['user_input'].items():
                 message += "#" + key + "#" + ": " + val + "  \n"
             with st.spinner("Please wait while I draft the speech..."):
